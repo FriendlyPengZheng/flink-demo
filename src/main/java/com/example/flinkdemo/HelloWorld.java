@@ -22,7 +22,7 @@ public class HelloWorld implements CommandLineRunner {
         DataStream<Person> adults = flintstones.filter(new FilterFunction<Person>() {
             @Override
             public boolean filter(Person person) throws Exception {
-                return person.age >= 18;
+                return person.age >= 17;
             }
         });
 
