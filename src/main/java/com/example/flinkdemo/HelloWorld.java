@@ -16,7 +16,7 @@ public class HelloWorld implements CommandLineRunner {
 
         DataStream<Person> flintstones = env.fromElements(
                 new Person("Fred", 35),
-                new Person("Wilma", 35),
+                new Person("Wilma", 16),
                 new Person("Pebbles", 2));
 
         DataStream<Person> adults = flintstones.filter(new FilterFunction<Person>() {
