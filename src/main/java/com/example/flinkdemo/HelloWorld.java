@@ -1,18 +1,19 @@
 package com.example.flinkdemo;
 
+import org.apache.flink.api.common.JobExecutionResult;
 import org.apache.flink.api.common.functions.FilterFunction;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class HelloWorld implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        final StreamExecutionEnvironment env =
-                StreamExecutionEnvironment.getExecutionEnvironment();
+
+        final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         DataStream<Person> flintstones = env.fromElements(
                 new Person("Fred", 35),
@@ -22,13 +23,12 @@ public class HelloWorld implements CommandLineRunner {
         DataStream<Person> adults = flintstones.filter(new FilterFunction<Person>() {
             @Override
             public boolean filter(Person person) throws Exception {
-                return person.age >= 17;
+                Thread.sleep(1000 * 10);
+                return person.age >= 10;
             }
         });
-
         adults.print();
-
-        env.execute();
+        JobExecutionResult execute = env.execute();
     }
 
     public static class Person {
