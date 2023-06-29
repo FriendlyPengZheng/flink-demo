@@ -30,7 +30,7 @@ public class MyDataSource implements SourceFunction<String> {
             for (int i = 0; i < repeatLineCount; i++) {
                 String line = uniqueLines.stream().skip(rand.nextInt(uniqueLineCount)).findFirst().orElse("");
                 Thread.sleep(1L);
-                ctx.collect(line);
+                ctx.collectWithTimestamp(line, System.currentTimeMillis());
             }
         }
     }
