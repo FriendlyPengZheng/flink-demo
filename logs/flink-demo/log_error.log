@@ -1,0 +1,59 @@
+2023-07-03 10:41:04.139 [BLOB connection for /10.155.2.221:46660] ERROR org.apache.flink.runtime.blob.BlobServerConnection - Error while executing BLOB connection.
+java.io.IOException: Unknown operation 22
+	at org.apache.flink.runtime.blob.BlobServerConnection.run(BlobServerConnection.java:116)
+2023-07-03 10:41:04.139 [BLOB connection for /10.155.2.221:52542] ERROR org.apache.flink.runtime.blob.BlobServerConnection - Error while executing BLOB connection.
+java.io.IOException: Unknown operation 22
+	at org.apache.flink.runtime.blob.BlobServerConnection.run(BlobServerConnection.java:116)
+2023-07-03 10:41:04.139 [BLOB connection for /10.155.2.221:46638] ERROR org.apache.flink.runtime.blob.BlobServerConnection - Error while executing BLOB connection.
+java.io.IOException: Unknown operation 71
+	at org.apache.flink.runtime.blob.BlobServerConnection.run(BlobServerConnection.java:116)
+2023-07-03 10:41:04.139 [BLOB connection for /10.155.2.221:47652] ERROR org.apache.flink.runtime.blob.BlobServerConnection - Error while executing BLOB connection.
+java.io.IOException: Unknown operation 22
+	at org.apache.flink.runtime.blob.BlobServerConnection.run(BlobServerConnection.java:116)
+2023-07-03 10:41:04.139 [BLOB connection for /10.155.2.221:44024] ERROR org.apache.flink.runtime.blob.BlobServerConnection - Error while executing BLOB connection.
+java.io.IOException: Unknown operation 13
+	at org.apache.flink.runtime.blob.BlobServerConnection.run(BlobServerConnection.java:116)
+2023-07-03 10:41:04.139 [BLOB connection for /10.155.2.221:59902] ERROR org.apache.flink.runtime.blob.BlobServerConnection - Error while executing BLOB connection.
+java.io.IOException: Unknown operation 71
+	at org.apache.flink.runtime.blob.BlobServerConnection.run(BlobServerConnection.java:116)
+2023-07-03 10:54:42.179 [flink-akka.actor.default-dispatcher-19] ERROR o.apache.flink.runtime.rpc.akka.FencedAkkaRpcActor - Error while executing remote procedure call public void org.apache.flink.runtime.resourcemanager.ResourceManager.notifySlotAvailable(org.apache.flink.runtime.instance.InstanceID,org.apache.flink.runtime.clusterframework.types.SlotID,org.apache.flink.runtime.clusterframework.types.AllocationID).
+java.lang.reflect.InvocationTargetException: null
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.lambda$handleRpcInvocation$0(AkkaRpcActor.java:301)
+	at org.apache.flink.runtime.concurrent.akka.ClassLoadingUtils.runWithContextClassLoader(ClassLoadingUtils.java:83)
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRpcInvocation(AkkaRpcActor.java:300)
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleRpcMessage(AkkaRpcActor.java:222)
+	at org.apache.flink.runtime.rpc.akka.FencedAkkaRpcActor.handleRpcMessage(FencedAkkaRpcActor.java:84)
+	at org.apache.flink.runtime.rpc.akka.AkkaRpcActor.handleMessage(AkkaRpcActor.java:168)
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:24)
+	at akka.japi.pf.UnitCaseStatement.apply(CaseStatements.scala:20)
+	at scala.PartialFunction.applyOrElse(PartialFunction.scala:123)
+	at scala.PartialFunction.applyOrElse$(PartialFunction.scala:122)
+	at akka.japi.pf.UnitCaseStatement.applyOrElse(CaseStatements.scala:20)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:171)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172)
+	at scala.PartialFunction$OrElse.applyOrElse(PartialFunction.scala:172)
+	at akka.actor.Actor.aroundReceive(Actor.scala:537)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:535)
+	at akka.actor.AbstractActor.aroundReceive(AbstractActor.scala:220)
+	at akka.actor.ActorCell.receiveMessage$$$capture(ActorCell.scala:580)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:548)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+Caused by: java.lang.IllegalStateException: null
+	at org.apache.flink.util.Preconditions.checkState(Preconditions.java:177)
+	at org.apache.flink.runtime.resourcemanager.slotmanager.DefaultSlotTracker.transitionSlotToFree(DefaultSlotTracker.java:162)
+	at org.apache.flink.runtime.resourcemanager.slotmanager.DefaultSlotTracker.notifyFree(DefaultSlotTracker.java:123)
+	at org.apache.flink.runtime.resourcemanager.slotmanager.DeclarativeSlotManager.freeSlot(DeclarativeSlotManager.java:437)
+	at org.apache.flink.runtime.resourcemanager.ResourceManager.notifySlotAvailable(ResourceManager.java:584)
+	... 32 common frames omitted
