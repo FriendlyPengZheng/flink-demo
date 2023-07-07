@@ -1,8 +1,9 @@
 package com.example.flinkdemo.source;
 
-import org.apache.flink.streaming.api.functions.source.RichSourceFunction;
 
-public class MaxComputeSource extends RichSourceFunction {
+import org.apache.flink.streaming.api.functions.source.SourceFunction;
+
+public class MaxComputeSource implements SourceFunction {
 
     @Override
     public void run(SourceContext ctx) throws Exception {
@@ -13,4 +14,7 @@ public class MaxComputeSource extends RichSourceFunction {
     public void cancel() {
 
     }
+
+    // todo read holo real time data and process
+
 }
